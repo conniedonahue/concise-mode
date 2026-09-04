@@ -2,7 +2,7 @@
 
 A skill for Claude Code that stops it from burying the answer. Action first. Steps numbered. No "Hope this helps!"
 
-Forked from [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd). The original repo also is compatible for many harnesses, here it is stripped to just a bare Claude Code plugin — see [Credits](#credits).
+Forked from [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd). The original repo was purpose-built for ADHD brains; I liked how it effectively cut down on claudeish psychobabble, so I adjusted the skill a bit to more suit my needs. The original work is also is compatible for many harnesses, here it is stripped to just a bare Claude Code plugin — see [Credits](#credits).
 
 ## What changes
 
