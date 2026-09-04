@@ -1,8 +1,8 @@
-# Claude stop talking like >that<
+# Concise Mode
 
 A skill for Claude Code that stops it from burying the answer. Action first. Steps numbered. No "Hope this helps!"
 
-Forked from [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd). I don't have adhd and feel weird about claiming I do, so I trimmed down the adhd-specific language. The original repo also is compatible for many harnesses, here it is stripped to just a bare Claude Code plugin — see [Credits](#credits).
+Forked from [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd). The original repo also is compatible for many harnesses, here it is stripped to just a bare Claude Code plugin — see [Credits](#credits).
 
 ## What changes
 
@@ -34,7 +34,7 @@ Forked from [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd). I don't
 
 ## The rules
 
-10 rules. Full text in [SKILL.md](./skills/claude-stop-talking-like-that/SKILL.md).
+10 rules. Full text in [SKILL.md](./skills/concise-mode/SKILL.md).
 
 1. Lead with the next action.
 2. Number multi-step tasks.
@@ -53,51 +53,51 @@ This is a local-only Claude Code plugin — no marketplace publish needed. From 
 
 ```bash
 claude plugin marketplace add /Users/connor/projects/claude-stop-talking-like-that
-claude plugin install claude-stop-talking-like-that@claude-stop-talking-like-that
+claude plugin install concise-mode@concise-mode
 ```
 
-Restart Claude Code, then type `/claude-stop-talking-like-that` to turn the rules on for the current session. Say "stop adhd mode" to turn them back off.
+Restart Claude Code, then type `/concise-mode` to turn the rules on for the current session. Say "stop concise mode" to turn them back off.
 
 ### Always-on (optional)
 
-A `SessionStart` hook loads the full ruleset at the start of every session, no `/claude-stop-talking-like-that` needed:
+A `SessionStart` hook loads the full ruleset at the start of every session, no `/concise-mode` needed:
 
 ```bash
-touch ~/.claude/.claude-stop-talking-like-that-always
+touch ~/.claude/.concise-mode-always
 ```
 
 If you use a custom Claude configuration directory, create the flag there instead:
 
 ```bash
-touch "$CLAUDE_CONFIG_DIR/.claude-stop-talking-like-that-always"
+touch "$CLAUDE_CONFIG_DIR/.concise-mode-always"
 ```
 
 Back to on-demand:
 
 ```bash
-rm ~/.claude/.claude-stop-talking-like-that-always
+rm ~/.claude/.concise-mode-always
 ```
 
-The hook only fires when the flag file exists, so installing the plugin changes nothing by itself. "stop adhd mode" still turns it off for the current session.
+The hook only fires when the flag file exists, so installing the plugin changes nothing by itself. "stop concise mode" still turns it off for the current session.
 
 ### Update
 
 Made a local edit to `SKILL.md`? Reload it with:
 
 ```bash
-claude plugin marketplace update claude-stop-talking-like-that
+claude plugin marketplace update concise-mode
 ```
 
 ### Uninstall
 
 ```bash
-claude plugin uninstall claude-stop-talking-like-that
-claude plugin marketplace remove claude-stop-talking-like-that
+claude plugin uninstall concise-mode
+claude plugin marketplace remove concise-mode
 ```
 
 ## Tune it
 
-Just edit [`skills/claude-stop-talking-like-that/SKILL.md`](./skills/claude-stop-talking-like-that/SKILL.md) directly, then re-run the update command above.
+Just edit [`skills/concise-mode/SKILL.md`](./skills/concise-mode/SKILL.md) directly, then re-run the update command above.
 
 ## Credits
 

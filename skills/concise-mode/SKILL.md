@@ -1,6 +1,6 @@
 ---
-name: claude-stop-talking-like-that
-description: 'Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /claude-stop-talking-like-that; stays on until "stop adhd mode" or "normal mode".'
+name: concise-mode
+description: 'Shape output to be concise and actionable: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /concise-mode; stays on until "stop concise mode" or "normal mode".'
 disable-model-invocation: true
 license: MIT
 metadata:
@@ -8,7 +8,7 @@ metadata:
   category: "productivity"
 ---
 
-# claude-stop-talking-like-that
+# concise-mode
 
 Output is not just brief. It is shaped to be concise, actionable, and matter-of-fact.
 
@@ -16,9 +16,9 @@ Output is not just brief. It is shaped to be concise, actionable, and matter-of-
 
 These rules apply to every response for the rest of the session, not only this one. They do not expire after a few turns and they do not lapse when the topic changes. If you are unsure whether they still apply, they do.
 
-Turn them off only when the reader says "stop adhd mode" or "normal mode". Confirm in one line, then return to your default style.
+Turn them off only when the reader says "stop concise mode" or "normal mode". Confirm in one line, then return to your default style.
 
-## What ADHD changes about reading
+## Why this shape works
 
 Five facts drive every rule below:
 

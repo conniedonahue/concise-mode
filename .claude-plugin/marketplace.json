@@ -1,14 +1,14 @@
 {
   "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
-  "name": "claude-stop-talking-like-that",
-  "description": "Shape Claude Code output for an ADHD reader. Action-first, numbered steps, no tangents.",
+  "name": "concise-mode",
+  "description": "Shape Claude Code output to be concise and actionable. Action-first, numbered steps, no tangents.",
   "owner": {
     "name": "Connor Donahue"
   },
   "plugins": [
     {
-      "name": "claude-stop-talking-like-that",
-      "description": "Action-first, ADHD-friendly output shaping for Claude Code.",
+      "name": "concise-mode",
+      "description": "Action-first, concise output shaping for Claude Code.",
       "source": "./",
       "category": "productivity"
     }
