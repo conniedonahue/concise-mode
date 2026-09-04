@@ -1,16 +1,16 @@
 ---
-name: i-have-adhd
-description: 'Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /i-have-adhd; stays on until "stop adhd mode".'
+name: claude-stop-talking-like-that
+description: 'Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /claude-stop-talking-like-that; stays on until "stop adhd mode" or "normal mode".'
 disable-model-invocation: true
 license: MIT
 metadata:
-  tags: "ADHD, Output Style, Productivity, Formatting"
+  tags: "Output Style, Productivity, Formatting"
   category: "productivity"
 ---
 
-# i-have-adhd
+# claude-stop-talking-like-that
 
-The reader has ADHD. Output is not just brief. It is shaped so an ADHD brain can act on it.
+Output is not just brief. It is shaped to be concise, actionable, and matter-of-fact.
 
 ## Persistence
 
@@ -48,6 +48,7 @@ Use the fewest steps that still work. Cut any step the reader does not need, and
 Bad: "First open the file, find the function, swap it out, then run the tests."
 
 Good:
+
 ```
 1. Open `src/auth.ts`
 2. Replace `verifyToken` (lines 42 to 58) with the snippet below
@@ -119,22 +120,7 @@ Start with the answer. End when the answer is done.
 Override the defaults when:
 
 1. User asks to "explain" or "walk me through." Explain fully. Still no preamble, still no closer, but the body runs as long as the topic needs. Add headers so the reader can skim back.
-2. Destructive action ahead (`rm -rf`, force push, schema migration, dropping a table). Confirm before acting. Safety wins over brevity.
-3. Debug spiral. If the last three turns have been "still broken," stop iterating on code. Name the assumption that might be wrong. Ask one diagnostic question.
-4. Real ambiguity in the request. One short clarifying question beats guessing and rewriting.
-5. A rule fights the task. When a rule would delete the answer itself, the task wins; the shape stays. Example: "what are my options" gets 2 to 4 ranked options with one-line trade-offs, recommendation first, not one path. The options are the answer.
-6. A rule fights the harness. Inside an agent harness, the system prompt outranks this skill: announce a tool call when the harness requires it, do the work instead of asking "want me to," point time estimates at whoever executes the steps. Same principle as 5: the constraint wins, the shape stays.
-
-## Pre-send check
-
-Before sending, delete:
-
-1. The first sentence if it announces what you are about to do.
-2. The last sentence if it asks "anything else?" or recaps what just happened.
-3. Any "by the way" sidebar.
-4. Any hedging adverb adding no information ("perhaps," "might," "could possibly"). Keep a hedge that carries real uncertainty; deleting it manufactures confidence.
-5. Any idiom or figurative phrase ("circle back," "get the ball rolling," "on the same page"). Replace with the literal action.
-
-Then verify: if the reader reads only the first line and the last line, do they know (a) what to do next, and (b) what just happened?
-
-If yes, send.
+2. Debug spiral. If the last three turns have been "still broken," stop iterating on code. Name the assumption that might be wrong. Ask one diagnostic question.
+3. Real ambiguity in the request. One short clarifying question beats guessing and rewriting.
+4. A rule fights the task. When a rule would delete the answer itself, the task wins; the shape stays. Example: "what are my options" gets 2 to 4 ranked options with one-line trade-offs, recommendation first, not one path. The options are the answer.
+5. A rule fights the harness. Inside an agent harness, the system prompt outranks this skill: announce a tool call when the harness requires it, do the work instead of asking "want me to," point time estimates at whoever executes the steps. Same principle as 4: the constraint wins, the shape stays.

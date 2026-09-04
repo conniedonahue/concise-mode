@@ -1,9 +1,8 @@
 {
-  "name": "i-have-adhd",
-  "version": "0.2.0",
+  "name": "claude-stop-talking-like-that",
+  "version": "0.1.0",
   "description": "Shape Claude Code output for an ADHD reader: lead with the next action, number steps, suppress tangents, restate state, make wins visible.",
   "author": {
-    "name": "Ayoub G.",
-    "url": "https://github.com/ayghri"
+    "name": "Connor Donahue"
   }
 }

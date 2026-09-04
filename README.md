@@ -1,41 +1,10 @@
-<p align="center">
-  <img src="./logo.png" alt="i-have-adhd" width="140" />
-</p>
-<p align="center">
-  <strong align="center">ADHD-friendly outputs. No ADHD diagnosis needed!</strong>
-</p>
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="License"></a>
-</p>
+# Claude stop talking like >that<
 
-<p align="center">
-  <strong title="English" aria-label="English">🇬🇧</strong> ·
-  <a href=".github/readme/README.zh-CN.md" title="简体中文" aria-label="简体中文">🇨🇳</a> ·
-  <a href=".github/readme/README.pt-BR.md" title="Português (Brasil)" aria-label="Português (Brasil)">🇧🇷</a> ·
-  <a href=".github/readme/README.ja.md" title="日本語" aria-label="日本語">🇯🇵</a> ·
-  <a href=".github/readme/README.vi.md" title="Tiếng Việt" aria-label="Tiếng Việt">🇻🇳</a> ·
-  <a href=".github/readme/README.ko.md" title="한국어" aria-label="한국어">🇰🇷</a> ·
-  <a href=".github/readme/README.th.md" title="ภาษาไทย" aria-label="ภาษาไทย">🇹🇭</a>
-</p>
+A skill for Claude Code that stops it from burying the answer. Action first. Steps numbered. No "Hope this helps!"
 
-
-## Install
-
-Copy/paste into your CLI prompt:
-
-```text
-Install the i-have-adhd skill/plugin from https://github.com/ayghri/i-have-adhd, refer to the repo's AGENTS.md for instructions.
-```
-
-Or 🔗 [check the installation instructions](INSTALL.md).
-
-## What it does
-
-A skill for your coding assistant that stops it from burying the answer. Action first. Steps numbered. No "Hope this helps!"
-
+Forked from [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd). I don't have adhd and feel weird about claiming I do, so I trimmed down the adhd-specific language. The original repo also is compatible for many harnesses, here it is stripped to just a bare Claude Code plugin — see [Credits](#credits).
 
 ## What changes
-
 
 <table>
 <tr>
@@ -63,10 +32,9 @@ A skill for your coding assistant that stops it from burying the answer. Action 
 </tr>
 </table>
 
-
 ## The rules
 
-10 rules. Full text in [SKILL.md](./skills/i-have-adhd/SKILL.md).
+10 rules. Full text in [SKILL.md](./skills/claude-stop-talking-like-that/SKILL.md).
 
 1. Lead with the next action.
 2. Number multi-step tasks.
@@ -79,25 +47,62 @@ A skill for your coding assistant that stops it from burying the answer. Action 
 9. Cap lists at 5 items.
 10. No preamble. No recap. No closers.
 
-## Tune it
+## Install (local plugin)
 
-Fork, edit `skills/i-have-adhd/SKILL.md`, then swap your copy in:
+This is a local-only Claude Code plugin — no marketplace publish needed. From this repo's directory:
 
 ```bash
-claude plugin uninstall i-have-adhd            # drop the upstream copy first:
-claude plugin marketplace remove i-have-adhd   # fork and upstream share both names
-claude plugin marketplace add <your-username>/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
+claude plugin marketplace add /Users/connor/projects/claude-stop-talking-like-that
+claude plugin install claude-stop-talking-like-that@claude-stop-talking-like-that
 ```
 
-Restart Claude Code, then re-invoke `/i-have-adhd`.
+Restart Claude Code, then type `/claude-stop-talking-like-that` to turn the rules on for the current session. Say "stop adhd mode" to turn them back off.
+
+### Always-on (optional)
+
+A `SessionStart` hook loads the full ruleset at the start of every session, no `/claude-stop-talking-like-that` needed:
+
+```bash
+touch ~/.claude/.claude-stop-talking-like-that-always
+```
+
+If you use a custom Claude configuration directory, create the flag there instead:
+
+```bash
+touch "$CLAUDE_CONFIG_DIR/.claude-stop-talking-like-that-always"
+```
+
+Back to on-demand:
+
+```bash
+rm ~/.claude/.claude-stop-talking-like-that-always
+```
+
+The hook only fires when the flag file exists, so installing the plugin changes nothing by itself. "stop adhd mode" still turns it off for the current session.
+
+### Update
+
+Made a local edit to `SKILL.md`? Reload it with:
+
+```bash
+claude plugin marketplace update claude-stop-talking-like-that
+```
+
+### Uninstall
+
+```bash
+claude plugin uninstall claude-stop-talking-like-that
+claude plugin marketplace remove claude-stop-talking-like-that
+```
+
+## Tune it
+
+Just edit [`skills/claude-stop-talking-like-that/SKILL.md`](./skills/claude-stop-talking-like-that/SKILL.md) directly, then re-run the update command above.
 
 ## Credits
 
-Loosely based on *The Adult ADHD Tool Kit* by J. Russell Ramsay and Anthony L. Rostain. Adapted for how an LLM should respond, not how a human should organize their day.
+Forked from [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) by Ayoub Ghriss (MIT licensed) — the original supports a dozen agent harnesses; this fork strips that down to a Claude Code-only local plugin.
 
 ## License
 
 MIT.
-
-Star ⭐ if it saved you one scroll past one "Great question!"
