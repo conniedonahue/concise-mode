@@ -52,7 +52,7 @@ Forked from [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd). The ori
 This is a local-only Claude Code plugin — no marketplace publish needed. From this repo's directory:
 
 ```bash
-claude plugin marketplace add /Users/connor/projects/claude-stop-talking-like-that
+claude plugin marketplace add /Users/connor/projects/concise-mode
 claude plugin install concise-mode@concise-mode
 ```
 
